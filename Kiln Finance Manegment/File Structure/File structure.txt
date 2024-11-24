@@ -1,0 +1,51 @@
+project/
+│
+├── app.py                # Main application file
+├── config.py             # Configuration settings for Flask
+├── requirements.txt      # Required packages
+├── instance/
+│   └── database.db       # SQLite database (or other databases)
+│
+├── templates/            # All HTML files
+│   ├── layout.html       # Base template for inheritance
+│   ├── dashboard.html    # Dashboard page
+│   ├── brand/
+│   │   ├── index.html    # List of brands
+│   │   ├── detail.html   # Brand details view
+│   │   └── add.html      # Add new brand page
+│   ├── vehicle/
+│   ├── salesman/
+│   └── order/
+│
+├── static/               # Static files (CSS, JS, images)
+│   ├── css/
+│   ├── js/
+│   └── images/
+│
+├── models/               # Database models
+│   ├── __init__.py       # Initializes models as a package
+│   ├── brand.py          # Brand model
+│   ├── vehicle.py        # Vehicle model
+│   ├── salesman.py       # Salesman model
+│   └── order.py          # Order model
+│
+├── controllers/          # All route handlers
+│   ├── __init__.py       # Initializes controllers as a package
+│   ├── auth.py           # Auth-related routes (login)
+│   ├── dashboard.py      # Dashboard routes
+│   ├── brand.py          # Brand-related routes
+│   ├── vehicle.py        # Vehicle-related routes
+│   ├── salesman.py       # Salesman-related routes
+│   └── order.py          # Order-related routes
+│
+├── services/             # Business logic for reusability
+│   ├── __init__.py       # Initializes services as a package
+│   ├── brand_service.py  # Brand business logic
+│   ├── vehicle_service.py# Vehicle business logic
+│   ├── salesman_service.py# Salesman business logic
+│   └── order_service.py  # Order business logic
+│
+└── utils/                # Utility functions (helpers, validations, etc.)
+    ├── __init__.py       # Initializes utils as a package
+    ├── db_utils.py       # Helper functions for DB operations
+    └── validation.py     # Helper functions for input validation
