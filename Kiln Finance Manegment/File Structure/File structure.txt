@@ -49,3 +49,36 @@ project/
     ├── __init__.py       # Initializes utils as a package
     ├── db_utils.py       # Helper functions for DB operations
     └── validation.py     # Helper functions for input validation
+
+
+
+
+Explanation of the Structure:
+app.py: The entry point to the Flask app. It will set up the Flask instance and handle routing.
+config.py: Contains configuration variables for Flask, such as the database URI, secret key, etc.
+instance/database.db: This is where the SQLite (or other database) file will reside. This is separated from the main project to keep sensitive information like the database out of version control.
+templates/: Stores all HTML files, and you can organize them into subdirectories based on their functionality (e.g., brand, vehicle, order). The layout.html file is the base template that can be extended by other pages.
+static/: Contains static assets such as CSS, JS, and image files.
+models/: Stores your database models. Each model represents an entity like a brand, vehicle, order, etc. These models define the structure of your database tables.
+controllers/: Contains route handlers that define the behavior of the application. Each controller is responsible for a particular feature (e.g., handling routes for brand management, order management, etc.).
+services/: Contains business logic related to each feature (like brand service, vehicle service, etc.). This layer ensures that business rules are kept separate from route handling logic (aligning with SOLID principles, especially the Single Responsibility Principle).
+utils/: Contains utility functions that are used across the application, like database helpers and validation functions.
+Using OOP and SOLID Principles:
+Single Responsibility Principle (SRP): Each module, class, or function should have only one reason to change. For example, the BrandService class will handle business logic related to brands, while the BrandController will handle routes related to brands.
+
+Open/Closed Principle (OCP): The code should be open for extension but closed for modification. By using inheritance or creating service classes, you can add new functionality without modifying existing code.
+
+Liskov Substitution Principle (LSP): You can create subclasses for various types of vehicles, orders, etc., and use polymorphism to handle different behaviors in a uniform way.
+
+Interface Segregation Principle (ISP): Break down interfaces into smaller ones so that consumers don't need to depend on methods they don't use. For instance, a separate BrandService interface for brand-related tasks and a SalesmanService interface for salesman tasks.
+
+Dependency Inversion Principle (DIP): High-level modules should not depend on low-level modules. Both should depend on abstractions. Use dependency injection in services, so route controllers don't depend directly on database models but instead on service classes.
+
+Reusability:
+By keeping business logic and route handlers in separate modules, you can easily reuse services and models in different parts of your app. For example, the brand_service.py can be imported in both the brand controller and other features, ensuring reusability.
+Steps to Implement:
+Set up the models for your entities (Brand, Vehicle, Salesman, Order).
+Create the routes and views in the controllers/ folder.
+Implement business logic in the services/ folder, ensuring that you keep complex logic separate.
+Define templates in the templates/ folder, using inheritance to reduce code duplication (e.g., layout.html for shared structure).
+Implement utility functions in the utils/ folder as needed.
