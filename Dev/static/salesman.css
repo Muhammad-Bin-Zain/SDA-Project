@@ -3,6 +3,8 @@ body {
   margin: 0;
   height: 100vh;
   display: flex;
+  flex-direction: column; /* Ensures proper stacking of elements */
+  overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 .styled-button {
   display: flex;
