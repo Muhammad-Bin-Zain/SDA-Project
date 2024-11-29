@@ -1,17 +1,28 @@
 body {
-  font-family: "Inter";
+  font-family: 'Inter', sans-serif;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   height: 100vh;
   display: flex;
+  flex-direction: column; /* Ensures proper stacking of elements */
+  overflow-x: hidden; /* Prevents horizontal scrolling */
 }
+
+.container {
+  max-width: 1200px; /* Ensures content stays within the screen */
+  margin: 0 auto; /* Centers content */
+  padding: 20px;
+}
+
 .styled-button {
   display: flex;
   align-items: center;
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #828282;
-  border: 1px #e0e0e0 solid;
+  border: 1px #E0E0E0 solid;
   border-radius: 8px;
   cursor: pointer;
   outline: none;
@@ -23,7 +34,7 @@ body {
 }
 
 .styled-table {
-  width: 500px;
+  width: 100%;
   border-collapse: separate;
   border-spacing: 0 10px; /* Adds space between rows */
   font-family: Arial, sans-serif;
@@ -31,7 +42,7 @@ body {
 }
 
 .styled-table thead tr {
-  background-color: #007b7b;
+  background-color: #007B7B;
   color: white;
   text-align: left;
   height: 40px;
@@ -40,6 +51,7 @@ body {
 .styled-table th,
 .styled-table td {
   padding: 12px 15px; /* Adds padding for better readability */
+  word-wrap: break-word; /* Prevents content overflow in cells */
 }
 
 .styled-table tbody tr {
@@ -55,11 +67,6 @@ body {
   border-bottom: none; /* Removes border for the last row */
 }
 
-.styled-table th {
-  border-bottom: 2px solid white; /* Ensures no vertical lines appear */
-  font-weight: bold;
-}
-
 .pagination {
   display: flex;
   justify-content: center;
@@ -71,7 +78,7 @@ body {
   padding: 8px 12px;
   text-decoration: none;
   color: white;
-  background-color: #007b7b;
+  background-color: #007B7B;
   border-radius: 5px;
 }
 
@@ -82,4 +89,20 @@ body {
 .pagination span {
   margin: 0 10px;
   font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .styled-button {
+      font-size: 14px;
+      padding: 8px 16px;
+  }
+
+  .styled-table th,
+  .styled-table td {
+      font-size: 12px;
+  }
+
+  .container {
+      padding: 10px;
+  }
 }
