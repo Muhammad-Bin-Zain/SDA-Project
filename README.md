@@ -28,7 +28,7 @@ A smart, student-built financial management system to help users efficiently tra
 
 ```
 SDA-PROJECT/
-├── SDA-Project-Final/
+├── Proj/
 │   ├── static/.......
 │   ├── templates/.......
 │   ├── routes.py
